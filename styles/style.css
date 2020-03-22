@@ -1,31 +1,95 @@
 .page {
-    min-width: 1100px;
-    /* мы ещё не умеем делать мобильную версию сайта, */
-    /* поэтому выше установлена минимальная ширина страницы */
-    max-width: 1600px;
-    /* выше установили ограничение по максимальной ширине */
-    margin: 0 auto;
-    /* выше для экранов больше 1600px отцентрировали весь контент */
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-width: 1100px;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+    border: 1px solid red; /*delete later*/
+  position: relative;
 }
+
+.logo {
+  width: 183px;
+  height: 32px;
+  background-image: url(../images/logo.svg);
+  z-index: 10;
+}
+
+/* HEADER ELEMENTS*/
 
 .header {
-    height: 100vh;
-    min-height: 600px;
-    max-height: 756px;
-    /* выше установили ограничения для секции */
+  height: 100vh;
+  min-height: 600px;
+  max-height: 756px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+.logo_place_header {
+  position: absolute;
+  top: 30px;
+  left: 64px;
+}
+
+.header__title {
+  width: 730px;
+  line-height: 96px;
+  font-size: 102px;
+  font-weight: 700;
+  position: absolute;
+  left: 64px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  margin: 0;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.header__subtitle {
+  width: 388px;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 64px;
+  z-index: 9;
+  border: 1px solid red;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #2f80ed;
+}
+
+.header__main-illustration {
+  width: 765px;
+  height: 608px;
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border: 1px solid red;
+}
+
 .header__square-pic {
-    height: 568px;
-    width: 568px;
+  height: 568px;
+  width: 568px;
+  background-color: #2f80ed;
+  position: absolute;
+  right: 0;
+  top: 64px;
+  z-index: 1;
 }
 
 /* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
-    width: 200px;
-    color: white;
-    margin-right: 0;
-    margin-top: 80px;
+  width: 200px;
+  color: white;
+  margin-right: 0;
+  margin-top: 80px;
 }
