@@ -1,6 +1,5 @@
 .page {
-  min-width: 1300px; /*изменил минимальную ширину страницы c 1100px до 1240px, т.к. заглавье шапки наезжает на мальчика и они позиционированны относительно границ страницы, но в брифе видно как блоки имеют возможность наезжать друг на друга.
-  Дополнительно увеличил ширину до 1300px, т.к. Фейнману наезжает на глаз фраза*/
+  min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -17,12 +16,14 @@
 
 .header {
   height: 100vh;
-  min-height: 632px; /*была изменена минимальная высота шапки, т.к. высота квадрата и его верхнего отступа равна 632px, вместо описанных в брифе 600px,при несоблюдении данного размера квадрат выходит за размер шапки. Либо имеет смысл описать в брифе позицию мальчика относительно квадрата, а не закрепление относительно правого нижнего угла*/
+  min-height: 600px;
   max-height: 756px;
+  padding-left: 64px;
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .logo_place_header {
@@ -36,8 +37,6 @@
   line-height: 96px;
   font-size: 102px;
   font-weight: 700;
-  position: absolute;
-  left: 64px;
   box-sizing: border-box;
   padding-bottom: 10px;
   margin: 0;
@@ -83,8 +82,10 @@
   z-index: 1;
 }
 
-
-
+.header__link:hover::after,.header__link:hover {
+  color: seagreen;
+  content: "Поехали!";
+}
                             /* DESCRIPTION ELEMENTS*/
 
 .description {
@@ -95,11 +96,8 @@
   align-items: stretch;
 }
 
-.two-columns_brief-block {
-  width:175px;
-}
-
 .two-columns__brief {
+  width:175px;
   margin-top: 0;
   line-height: 1.2;
   font-size: 18px;
@@ -124,7 +122,6 @@
   line-height: 34px;
   font-size: 24px;
   font-weight: 700;
-  margin-right: 10px;
 }
 
 .two-columns__paragraph:last-of-type {
@@ -195,7 +192,7 @@
                             /* FEINMAN ELEMENTS*/
 
 .feinman {
-  padding: 100px; /*Добавлен внутренний отступ в пользу визуальной состовляющей,в группе с наставником активно обсуждалась эта тема, пришли к выводу, что бриф может быть неточным. Размеры картинки и блока соблюдены, но отступ блока накладывается на отступ заглавья, если же убрать отступ заглавья будет правильная работа относительно размеров,но неправильная относительно визуальной состовляющей.*/
+  padding: 100px;
   height: 790px;
   display: flex;
   position: relative;
@@ -205,7 +202,7 @@
 }
 
 .feinman__title {
-  margin: 100px auto 0;
+  margin: 0 auto;
   width: 648px;
   text-align: center;
   z-index: 3;
@@ -228,7 +225,7 @@
   font-weight: normal;
   text-decoration: none;
   position: absolute;
-  top: 55%;
+  top: 60%;
   right: 48px;
   color: black;
 }
@@ -242,6 +239,11 @@
   z-index: 2;
 }
 
+.feinman__link:hover {
+  color: seagreen;
+  text-decoration: underline;
+}
+
                             /* KAUFMAN ELEMENTS*/
 
  .kaufman {
@@ -253,9 +255,9 @@
   overflow: hidden;
   position: relative;
 }
-.theme_dark {
+
+.section-title_theme_dark, .section-subtitle_theme_dark  {
   color: white;
-  text-decoration: none;
 }
 
 .table__cell_theme_dark {
@@ -264,7 +266,7 @@
   color: white;
 }
 
-.kaufman_triangle {
+.kaufman__triangle {
   width: 877px;
   height: 877px;
   background-size: cover;
@@ -290,14 +292,17 @@
   justify-content: space-between;
 }
 
-.footer__column_content_copyright {
-  flex-basis: 711px;
+.footer__column {
   flex-direction: column;
   display: flex;
+}
+
+.footer__column_content_copyright {
+  flex-basis: 711px;
   justify-content: space-between;
 }
 
-.logo__piace_footer {
+.logo_place_footer {
   height: 35px;
   background-image: url(../images/logo_white.svg);
 }
@@ -311,9 +316,7 @@
   color: white;
 }
 
-.footer__column_content {
-  display: flex;
-  flex-direction: column;
+.footer__column_content_info, .footer__column_content_social {
   flex-wrap: wrap;
 }
 
@@ -326,16 +329,28 @@
 }
 
 .footer__column-links {
-  display: flex;
+  list-style: none;
   flex-direction: column;
+  display: flex;
+  margin-top: 0;
+  padding: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 16px;
 }
 
+.footer__column-link {
+  color: white;
+  text-decoration: none;
+}
+
 .footer__social-icon {
   width: 16px;
   height: 16px;
   margin-right: 10px;
+}
+
+.footer__column-link:hover {
+  text-decoration: underline;
 }
