@@ -8,4 +8,4 @@
 * работа с фреймами
 * изучены и закреплены принципы методологии БЭМ.
 
-Адрес проекта: https://maximborov.github.io/how-to-learn/index.html
+Адрес проекта: https://maximsinyukov.github.io/how-to-learn/index.html
